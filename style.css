@@ -1,0 +1,163 @@
+/* ==========================================================
+   EL ELEGIDO GYM — estilos compartidos por todas las páginas
+   Para cambiar la paleta, editá las variables de :root.
+   ========================================================== */
+:root{
+  --black:#0a0a0a;
+  --ink:#141414;
+  --card:#181818;
+  --line:#2a2a2a;
+  --red:#e10600;
+  --red-dark:#b30500;
+  --white:#fff;
+  --muted:#b5b5b5;
+  --radius:16px;
+  --header-h:68px;
+  --font-head:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+  --font-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--black);color:var(--white);font-family:var(--font-body);line-height:1.6;-webkit-font-smoothing:antialiased}
+body.no-scroll{overflow:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+em{font-style:normal;color:var(--red)}
+.container{width:min(1120px,100% - 32px);margin-inline:auto}
+
+/* ---------- Encabezado ---------- */
+.site-header{position:sticky;top:0;z-index:50;height:var(--header-h);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 16px;background:rgba(10,10,10,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--red)}
+.logo img{width:56px;height:56px}
+.menu-btn{justify-self:start;width:44px;height:44px;border:0;background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:10px;border-radius:10px}
+.menu-btn span{display:block;height:3px;background:var(--white);border-radius:2px;transition:background .2s}
+.menu-btn:hover span{background:var(--red)}
+.menu-btn:focus-visible,.menu-close:focus-visible,.btn:focus-visible,summary:focus-visible,.menu a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+/* ---------- Menú lateral ---------- */
+.menu-overlay{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.65)}
+.menu-overlay[hidden]{display:none}
+.menu{position:fixed;top:0;left:0;bottom:0;z-index:70;width:min(320px,86vw);background:var(--ink);border-right:2px solid var(--red);padding:72px 24px 24px;transform:translateX(-100%);visibility:hidden;transition:transform .3s ease,visibility .3s}
+.menu.open{transform:none;visibility:visible}
+.menu ul{list-style:none;margin:0;padding:0}
+.menu a{display:block;padding:16px 8px;text-decoration:none;font-family:var(--font-head);font-weight:700;font-size:1.7rem;text-transform:uppercase;letter-spacing:.02em;border-bottom:1px solid var(--line);transition:color .2s,padding .2s}
+.menu a:hover,.menu a[aria-current="page"]{color:var(--red);padding-left:16px}
+.menu-close{position:absolute;top:12px;left:16px;width:44px;height:44px;border:0;background:transparent;color:var(--white);font-size:2.2rem;line-height:1;cursor:pointer}
+
+/* ---------- Tipografía y botones ---------- */
+h1,h2,h3{font-family:var(--font-head);text-transform:uppercase;line-height:1.05;margin:0 0 .5em;letter-spacing:.01em}
+.eyebrow{margin:0 0 8px;color:var(--red);font-weight:600;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border-radius:999px;border:2px solid transparent;font-weight:600;font-size:1rem;text-decoration:none;cursor:pointer;transition:transform .15s,background .2s,border-color .2s,color .2s}
+.btn svg{width:20px;height:20px;fill:currentColor;flex:none}
+.btn:hover{transform:translateY(-2px)}
+.btn-red{background:var(--red);color:var(--white)}.btn-red:hover{background:var(--red-dark)}
+.btn-light{background:var(--white);color:var(--black)}.btn-light:hover{background:#e8e8e8}
+.btn-wa{background:var(--red);color:var(--white)}.btn-wa:hover{background:var(--red-dark)}
+.btn-ig{background:transparent;color:var(--white);border-color:var(--white)}.btn-ig:hover{background:var(--white);color:var(--black)}
+
+/* ---------- Inicio: hero ---------- */
+.hero{display:grid;gap:28px;width:min(1120px,100% - 32px);margin:32px auto 0;align-items:center}
+.hero h1{font-size:clamp(3.2rem,12vw,6rem);margin-bottom:.2em}
+.lead{color:#e6e6e6;font-size:1.05rem;margin:0 0 24px}
+.hero-img{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+
+.section{padding:56px 0}
+.section-title{font-size:clamp(2rem,6vw,3rem);text-align:center;margin-bottom:28px}
+
+/* ---------- Desplegables de pisos ---------- */
+.floors{display:grid;gap:14px;max-width:820px;margin:0 auto}
+.floor{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:border-color .2s}
+.floor[open]{border-color:var(--red)}
+.floor summary{list-style:none;display:flex;align-items:center;gap:16px;padding:18px 20px;cursor:pointer}
+.floor summary::-webkit-details-marker{display:none}
+.floor-num{font-family:var(--font-head);font-weight:800;font-size:1.6rem;color:var(--red)}
+.floor-title{flex:1;font-family:var(--font-head);font-weight:700;font-size:1.7rem;text-transform:uppercase}
+.chev{width:12px;height:12px;border-right:3px solid var(--white);border-bottom:3px solid var(--white);transform:rotate(45deg);transition:transform .25s;margin-right:4px}
+.floor[open] .chev{transform:rotate(-135deg)}
+.floor-body{padding:0 20px 22px;animation:open .3s ease}
+.floor-body img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;margin-bottom:16px}
+.floor-body p{margin:0;color:#e0e0e0}
+@keyframes open{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+/* ---------- Contacto ---------- */
+.contact{background:var(--ink);border-block:1px solid var(--line)}
+.contact-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.hours{max-width:520px;margin:36px auto 0;padding:22px;border:1px solid var(--line);border-radius:var(--radius);text-align:center}
+.hours h3{display:flex;justify-content:center;align-items:center;gap:8px;font-size:1.6rem;color:var(--red)}
+.hours svg{width:22px;height:22px;fill:currentColor}
+.hours p{margin:6px 0;color:#e6e6e6}
+
+/* ---------- Subpáginas ---------- */
+.page-head{text-align:center;padding:48px 16px 28px}
+.page-head h1{font-size:clamp(2.6rem,9vw,4.5rem);margin:0}
+.cards{display:grid;gap:20px;padding-bottom:64px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--red)}
+.card h2{font-size:2rem;margin:0}
+.card p{margin:0;color:#dcdcdc}
+.card .btn{margin-top:auto;align-self:flex-start}
+.price{font-family:var(--font-head);font-weight:800;font-size:3rem!important;color:var(--white)!important;line-height:1}
+.plan{border-top:4px solid var(--red)}
+.routine .btn{align-self:stretch}
+
+/* Profesores */
+.cards-prof{gap:28px}
+.prof{padding:0;overflow:hidden;gap:0}
+.prof-img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 20%}
+.prof-body{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.prof h2{font-size:1.9rem}
+.age{color:var(--red)!important;font-weight:600}
+.sched{list-style:none;margin:0;padding:12px 14px;border-left:3px solid var(--red);background:rgba(255,255,255,.04);border-radius:0 8px 8px 0;font-size:.95rem}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.btn-row .btn{margin-top:0;padding:12px 20px}
+
+/* ---------- Pie de página ---------- */
+.site-footer{background:var(--ink);border-top:2px solid var(--red);padding:40px 16px 24px;text-align:center}
+.footer-logo{display:inline-block;margin-bottom:20px}
+.footer-logo img{width:64px;height:64px}
+.footer-grid{display:grid;gap:24px;max-width:960px;margin:0 auto;text-align:left}
+.site-footer h3{font-size:1.2rem;color:var(--red);margin-bottom:8px}
+.site-footer p{margin:0 0 8px;color:#d0d0d0;font-size:.95rem}
+.footer-links{list-style:none;margin:0;padding:0}
+.footer-links a{display:inline-block;padding:4px 0;color:#d0d0d0;text-decoration:none}
+.footer-links a:hover{color:var(--red)}
+.copy{margin-top:28px!important;padding-top:20px;border-top:1px solid var(--line);color:var(--muted)!important;font-size:.85rem!important}
+
+/* ---------- Tablet y escritorio ---------- */
+@media (min-width:700px){
+  .cards-2{grid-template-columns:repeat(2,1fr)}
+  .cards-3{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (min-width:900px){
+  .hero{grid-template-columns:1.1fr .9fr;gap:56px;margin-top:48px}
+  .hero-img{aspect-ratio:4/5}
+  .cards-prof{grid-template-columns:repeat(3,1fr);align-items:stretch}
+  .logo img{width:60px;height:60px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* ---------- Menú: divisor "Shop" ---------- */
+.menu-divider{display:flex;align-items:center;gap:12px;margin:22px 0 4px;color:var(--muted);font-size:.8rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase}
+.menu-divider::before,.menu-divider::after{content:"";flex:1;height:1px;background:var(--red)}
+
+/* ---------- Catálogo deslizable (Suplementos) ---------- */
+.catalog{position:relative;padding-bottom:12px}
+.catalog-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:4px 2px 16px;scrollbar-width:thin;scrollbar-color:var(--red) var(--line)}
+.catalog-track:focus-visible{outline:3px solid var(--red);outline-offset:4px}
+.product{flex:0 0 78%;scroll-snap-align:center;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--red);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.product-img{background:#fff;aspect-ratio:1/1;padding:16px;overflow:hidden}
+.product-img img{width:100%;height:100%;object-fit:contain}
+.product-body{padding:20px;display:flex;flex-direction:column;gap:12px;flex:1}
+.product h2{font-size:1.5rem;margin:0}
+.product-price{margin:0;font-family:var(--font-head);font-weight:700;font-size:1.5rem;color:var(--red);text-transform:uppercase}
+.product .btn{margin-top:auto;align-self:stretch}
+.cat-btn{display:none}
+.swipe-hint{text-align:center;color:var(--muted);font-size:.85rem;margin:0 auto 56px}
+@media (min-width:700px){
+  .product{flex-basis:300px}
+  .cat-btn{display:flex;position:absolute;top:40%;z-index:2;width:44px;height:44px;border-radius:50%;border:2px solid var(--white);background:var(--black);color:var(--white);font-size:1.8rem;line-height:1;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,opacity .2s}
+  .cat-btn:hover:not(:disabled){background:var(--red);border-color:var(--red)}
+  .cat-btn:disabled{opacity:.3;cursor:default}
+  .cat-prev{left:-12px}.cat-next{right:-12px}
+}

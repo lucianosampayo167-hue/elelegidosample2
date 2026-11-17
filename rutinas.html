@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Descarga tus rutinas | El Elegido Gym</title>
+  <meta name="description" content="Descargá las rutinas de entrenamiento en PDF para hombres y mujeres de El Elegido Gym.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO (igual en todas las páginas) -->
+  <header class="site-header">
+    <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="logo" href="index.html" aria-label="El Elegido Gym - Inicio">
+      <img src="assets/img/logo.svg" alt="El Elegido Gym" width="150" height="150">
+    </a>
+    <span class="header-spacer" aria-hidden="true"></span>
+  </header>
+
+  <!-- MENÚ LATERAL -->
+  <div class="menu-overlay" hidden></div>
+  <nav class="menu" id="menu" aria-label="Navegación principal" aria-hidden="true">
+    <button class="menu-close" type="button" aria-label="Cerrar menú">&times;</button>
+    <ul>
+      <li><a href="planes.html">Planes</a></li>
+      <li><a href="profesores.html">Profesores</a></li>
+      <li><a href="rutinas.html" aria-current="page">Descarga tus rutinas</a></li>
+      <li class="menu-divider" aria-hidden="true"><span>Shop</span></li>
+      <li><a href="suplementos.html">Suplementos</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="page-head">
+      <p class="eyebrow">Llevá tu entrenamiento en el celular</p>
+      <h1>Descarga tus <em>rutinas</em></h1>
+    </section>
+    <section class="container cards cards-2">
+      <article class="card routine">
+        <h2>Hombres</h2>
+        <p>Rutina en PDF para descargar y tener siempre a mano.</p>
+        <a class="btn btn-red" href="assets/pdf/rutina-hombre.pdf" download="Rutina-Hombre-El-Elegido.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v9.200l3.300-3.300 1.400 1.400L12 16l-5.700-5.700 1.400-1.400L11 12.200V3ZM4 19h16v2H4v-2Z"/></svg>Descargar PDF</a>
+      </article>
+      <article class="card routine">
+        <h2>Mujeres</h2>
+        <p>Rutina en PDF para descargar y tener siempre a mano.</p>
+        <a class="btn btn-red" href="assets/pdf/rutina-mujer.pdf" download="Rutina-Mujer-El-Elegido.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v9.200l3.300-3.300 1.400 1.400L12 16l-5.700-5.700 1.400-1.400L11 12.200V3ZM4 19h16v2H4v-2Z"/></svg>Descargar PDF</a>
+      </article>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA (igual en todas las páginas) -->
+  <footer class="site-footer">
+    <a class="footer-logo" href="index.html" aria-label="Inicio"><img src="assets/img/logo.svg" alt="" width="64" height="64" loading="lazy"></a>
+    <div class="footer-grid">
+      <div>
+        <h3>Dónde estamos</h3>
+        <p>Solanet 648<br>General Rodríguez</p>
+      </div>
+      <div>
+        <h3>Horarios</h3>
+        <p><strong>Lunes a viernes</strong><br>6:00 a 13:00 hs · 15:00 a 22:00 hs</p>
+        <p><strong>Sábados y feriados</strong><br>9:00 a 13:00 hs</p>
+      </div>
+      <div>
+        <h3>Navegá</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="planes.html">Planes</a></li>
+          <li><a href="profesores.html">Profesores</a></li>
+          <li><a href="rutinas.html">Descarga tus rutinas</a></li>
+          <li><a href="suplementos.html">Suplementos</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copy">&copy; <span data-year>2026</span> El Elegido Gym. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
